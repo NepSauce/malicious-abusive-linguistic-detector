@@ -6,6 +6,16 @@ class Vocabulary:
         self.index_word = {}
         self.word_counts = Counter()
         self.vocab_size = 0
+        self.PAD_TOKEN = "<PAD>"
+        self.UNK_TOKEN = "<UNK>"
+        self.add_special_tokens(self.PAD_TOKEN)
+        self.add_special_tokens(self.UNK_TOKEN)
+
+    def add_special_tokens(self, token):
+        idx = self.vocab_size
+        self.word_index[token] = idx
+        self.index_word[idx] = token
+        self.vocab_size += 1
 
     def build_vocab(self, tokenized_sentences):
         for sentences in tokenized_sentences:
