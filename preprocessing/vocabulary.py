@@ -29,3 +29,11 @@ class Vocabulary:
         
         return self.word_index, self.index_word
 
+    def encode(self, tokens):
+        encoded = []
+
+        for token in tokens:
+            index = self.word_index.get(token, self.word_index[self.UNK_TOKEN])
+            encoded.append(index)
+            
+        return encoded
