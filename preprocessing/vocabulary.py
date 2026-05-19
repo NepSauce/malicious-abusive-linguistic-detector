@@ -35,5 +35,13 @@ class Vocabulary:
         for token in tokens:
             index = self.word_index.get(token, self.word_index[self.UNK_TOKEN])
             encoded.append(index)
-            
+
         return encoded
+    
+    def decode(self, indices):
+        words = []
+
+        for index in indices:
+            words.append(self.index_word[index])
+        
+        return words
