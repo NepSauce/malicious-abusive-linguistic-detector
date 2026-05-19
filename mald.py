@@ -1,5 +1,5 @@
 from preprocessing.tokenizer import Tokenizer
-from utils.vocabulary import Vocabulary
+from preprocessing.vocabulary import Vocabulary
 
 text = "Hello, World! This is a   !!!!test."
 tokens = Tokenizer().tokenize(text)
