@@ -1,9 +1,10 @@
 from preprocessing.tokenizer import Tokenizer
 from preprocessing.vocabulary import Vocabulary
 
-class Preprecessor:
+class Preprocessor:
     def __init__(self):
-        pass
-    
+        self.tokenizer = Tokenizer()
+        self.vocabulary = Vocabulary()
+
     def preprocess(self, dataset):
-        pass
+        
