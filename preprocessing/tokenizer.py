@@ -5,10 +5,11 @@ class Tokenizer:
         pass
 
     def clean_text(self, text):
-        text = text.lower()
-        text = re.sub(r"[^a-z0-9\s]", "", text)
-        text = re.sub(r"\s+", " ", text).strip()
-        text = text.strip()
+        for row in text:
+            row = row.lower()
+            row = re.sub(r"[^a-z0-9\s]", "", row)
+            row = re.sub(r"\s+", " ", row).strip()
+            row = row.strip()
 
         return text
     
