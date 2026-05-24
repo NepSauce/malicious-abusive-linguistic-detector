@@ -6,7 +6,7 @@ from preprocessing.preprocessor import Preprocessor
 # vocabulary = Vocabulary()
 # index, words = vocabulary.build_vocab([tokens])
 
-preprocessor = Preprocessor('text_data/mald_dataset')
+preprocessor = Preprocessor('text_data/mald_dataset.csv')
 print(preprocessor.preprocess())
 
 # encoded_tokens = vocabulary.encode(tokens)

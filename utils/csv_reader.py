@@ -8,11 +8,11 @@ class CSVReader:
         try:
             with open(self.file_path, mode='r', newline='', encoding='utf-8') as csvfile:
                 reader = csv.reader(csvfile)
-                data = [row for row in reader]
+                return [row for row in reader]
 
         except csv.Error as e:
             print(f"Error reading CSV file: {e}")
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
 
-        return data
+        return None
