@@ -11,6 +11,7 @@ class Preprocessor:
 
     def preprocess(self):
         processed_data = []
+        encoded_data = []
         final_data = []
         token_list = []
         data = self.csv_reader.read_csv()
@@ -28,7 +29,12 @@ class Preprocessor:
         for tokens, label in processed_data:
             encoded_tokens = self.vocabulary.encode(tokens)
             
-            final_data.append((encoded_tokens, label))
+            encoded_data.append((encoded_tokens, label))
+
+        for tokens, label in encoded_data:
+            padded_tokens = self.vocabulary.pad_sequence(tokens, 128)
+
+            final_data.append((padded_tokens, label))
 
 
 
