@@ -8,14 +8,16 @@ class Tokenizer:
         cleaned_text = []
 
         for row in text:
-            row = row.lower()
+            label = row[1]
+            row = row[0].lower()
             row = re.sub(r"[^a-z0-9\s]", "", row)
             row = re.sub(r"\s+", " ", row).strip()
             row = row.strip()
 
-            cleaned_text.append(row)
+            cleaned_text.append((row, label))
 
         return cleaned_text
     
-    def tokenize(self, text):
-        return text.split()
+    def tokenize(self, sequence):
+        return sequence.split()
+  

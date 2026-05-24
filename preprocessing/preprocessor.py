@@ -11,9 +11,10 @@ class Preprocessor:
 
     def preprocess(self):
         data = self.csv_reader.read_csv()
-        tokens = self.tokenizer.tokenize(data[0])
-        self.vocabulary.build_vocab(tokens)
-        encoded_tokens = [self.vocabulary.encode(token) for token in tokens]
+        clean_text = self.tokenizer.clean_text(data)
+        # tokens = self.tokenizer.tokenize(clean_text)
+        # self.vocabulary.build_vocab(tokens)
+        # encoded_tokens = [self.vocabulary.encode(token) for token in tokens]
 
-        return encoded_tokens
+        return clean_text
     
